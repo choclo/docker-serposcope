@@ -2,7 +2,7 @@ FROM centos:7.3.1611
 MAINTAINER Tomas Olivares, tolivares@gmail.com
 
 RUN yum -y update && yum -y install \
-  java-1.8.0-openjdk &&\
+  java-1.8.0-openjdk \
   curl \
   && rm -rf /usr/share/doc/* && \
   rm -rf /usr/share/info/* && \
