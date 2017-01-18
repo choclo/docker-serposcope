@@ -1,12 +1,13 @@
-FROM java:8u72-jre
-MAINTAINER Carles Amigó, fr3nd@fr3nd.net
+FROM centos:7.3.1611
+MAINTAINER Tomas Olivares, tolivares@gmail.com
 
-RUN apt-get update && apt-get install -y \
-      curl \
-      && rm -rf /usr/share/doc/* && \
-      rm -rf /usr/share/info/* && \
-      rm -rf /tmp/* && \
-      rm -rf /var/tmp/*
+RUN yum -y update && yum -y install \
+  java-1.8.0-openjdk &&\
+  curl \
+  && rm -rf /usr/share/doc/* && \
+  rm -rf /usr/share/info/* && \
+  rm -rf /tmp/* && \
+  rm -rf /var/tmp/*
 
 ENV SERPOSCOPE_VERSION 2.6.0
 
